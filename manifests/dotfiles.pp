@@ -6,6 +6,7 @@ class buritica::dotfiles {
   $dotfiles   = "${my}/dotfiles"
   $ohmyzsh    = "${my}/oh-my-zsh"
   $zshrc      = "${home}/.zshrc"
+  $doing      = "${my}/doing"
   $rsync_dots = 'rsync --exclude ".git/" \
                   --exclude ".DS_Store" \
                   --exclude "bootstrap.sh" \
@@ -48,7 +49,7 @@ class buritica::dotfiles {
   # clone todo repo
   repository { $doing:
     source  => 'buritica/doing',
-    require => File['/Users/buritica']
+    require => File[$my]
   }
 
 }
