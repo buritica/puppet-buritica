@@ -48,7 +48,7 @@ class buritica::dotfiles {
   # clone todo repo
   repository { $doing:
     source  => 'buritica/doing',
-    require => File[$my]
+    require => File['/Users/buritica']
   }
 
 }
