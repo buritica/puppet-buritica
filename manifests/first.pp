@@ -9,7 +9,7 @@ class buritica::first {
   exec{'brew tap caskroom/fonts':}
 
   #install dropbox
-  package {'dropbox': provider => 'brewcask'}
+  # package {'dropbox': provider => 'brewcask'}
 
   # open dropbox to be configured if it hasn't been installed
   exec {"dropbox_installed":
