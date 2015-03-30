@@ -45,4 +45,10 @@ class buritica::dotfiles {
     cwd      => $dotfiles
   }
 
+  # clone todo repo
+  repository { $doing:
+    source  => 'buritica/doing',
+    require => File[$my]
+  }
+
 }
