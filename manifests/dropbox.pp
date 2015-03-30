@@ -1,11 +1,20 @@
 class buritica::dropbox {
-  notice('setting up buritica dropbox link')
+  notice('setting up buritica dropbox links')
+
+  # symlink Dropbox
+  file { '/Users/buritica/Dropbox':
+    ensure  => symlink,
+    force   => true,
+    target  => '/Users/buritica/Dropbox (Personal)',
+    ignore  => ['.DS_Store'],
+    backup  => false
+  }
 
   # symlink Documents
   file { '/Users/buritica/Documents':
     ensure  => symlink,
     force   => true,
-    target  => '/Users/buritica/Dropbox/Documents',
+    target  => '/Users/buritica/Dropbox (Personal)/Documents',
     ignore  => ['.DS_Store'],
     backup  => false
   }
@@ -14,7 +23,7 @@ class buritica::dropbox {
   file { '/Users/buritica/Downloads':
     ensure  => symlink,
     force   => true,
-    target  => '/Users/buritica/Dropbox/Downloads',
+    target  => '/Users/buritica/Dropbox (Personal)/Downloads',
     ignore  => ['.DS_Store'],
     backup  => false
   }
@@ -23,7 +32,7 @@ class buritica::dropbox {
   file { '/Users/buritica/Desktop':
     ensure  => symlink,
     force   => true,
-    target  => '/Users/buritica/Dropbox/Desktop',
+    target  => '/Users/buritica/Dropbox (Personal)/Desktop',
     ignore  => ['.DS_Store'],
     backup  => false
   }
