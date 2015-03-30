@@ -4,6 +4,7 @@ class buritica::nodejs {
   # remove nodenv because it sucks
   file {"${boxen::config::home}/nodenv":
     ensure => absent,
+    force => true
   }
   # include some provided versions
   # nodejs::version { 'v0.10.33': }
