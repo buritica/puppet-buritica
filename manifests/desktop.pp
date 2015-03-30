@@ -15,7 +15,6 @@ class buritica::desktop {
   include vlc
   include vmware_fusion
   include wget
-  include xquartz
   include zsh
 
   exec{'brew tap caskroom/fonts':}

@@ -17,7 +17,13 @@ class buritica::brew {
       'tree',
       'ghi',
       'postgresql',
-      'aircrack-ng'
+      'aircrack-ng',
+      'xquartz',
+      'speedtest_cli',
+      'webkit2png',
+      'coreutils',
+      'findutils',
+      'moreutils'
     ]:
     ensure => installed
   }
