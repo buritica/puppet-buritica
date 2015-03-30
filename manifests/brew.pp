@@ -22,7 +22,6 @@ class buritica::brew {
       'speedtest_cli',
       'webkit2png',
       'coreutils',
-      'findutils',
       'moreutils'
     ]:
     ensure => installed
