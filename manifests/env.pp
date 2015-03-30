@@ -15,7 +15,7 @@ class buritica::env {
       'ghi',
       'git-extras',
       'moreutils',
-      'ngrep'
+      'ngrep',
       'pstree',
       'tree',
       'speedtest_cli',
