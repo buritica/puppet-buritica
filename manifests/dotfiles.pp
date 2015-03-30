@@ -1,29 +1,48 @@
-# Dotfiles for sergiobuj
+class buritica::dotfiles {
+  notice('setting up buritica dotfiles')
 
-class sergiobuj::dotfiles {
-  notice('Setting up dotfiles for sergiobuj')
+  $home       = "/Users/${::boxen_user}"
+  $my         = "${home}/my"
+  $dotfiles   = "${my}/dotfiles"
+  $ohmyzsh    = "${my}/oh-my-zsh"
+  $zshrc      = "${home}/.zshrc"
+  $rsync_dots = 'rsync --exclude ".git/" \
+                  --exclude ".DS_Store" \
+                  --exclude "bootstrap.sh" \
+                  --exclude "README.md" \
+                  --exclude ".aliases" \
+                  --exclude ".exports" \
+                  --exclude ".functions" \
+                  -avh --no-perms . ~/test;'
 
-  $home     = "/Users/${::boxen_user}"
-  $src      = "${home}/src"
-  $dotfiles = "${src}/dotfiles"
+  notice('bring on the dotfiles')
 
-  file { $dotfiles:
-    ensure => directory
+  file { $my:
+    ensure  => directory
   }
 
+  # clone my dotfiles
   repository { $dotfiles:
-    source  => 'sergiobuj/dotfiles',
-    require => File[$dotfiles]
+    source  => 'buritica/dotfiles',
+    require => File[$my]
   }
 
-  exec { 'installing dotfiles':
-    command => 'sh install.sh',
-    cwd     => $dotfiles
+  # get oh-my-zsh
+  repository { $ohmyzsh:
+    source  => 'robbyrussell/oh-my-zsh',
+    require => File[$my]
   }
 
-  exec { 'pull dotfiles master':
-    command => 'git pull origin master',
-    cwd     => $dotfiles
+  # refresh the dotfiles repository
+  exec { 'git pull':
+    cwd => $dotfiles
   }
+
+  # sync relevant dotfiles excluding the ones we
+  # source ourselves in .zshrc to keep things clean
+  exec { 'rsync dotfiles':
+    command  => $rsync_dots,
+    cwd      => $dotfiles
+  }
+
 }
-

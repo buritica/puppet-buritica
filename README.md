@@ -1,29 +1,14 @@
 # Personal Puppet module for Boxen
 
+Forked from https://github.com/sergiobuj/puppet-sergiobuj
+
 A personal Puppet module is a great way to keep Boxen clean from many
 pesonal manifests.
 This means that adding a personal configuration is done by adding the module in
 the `Puppetfile`.
 
 ```
-github "sergiobuj", "1.0.0", :repo => "sergiobuj/puppet-sergiobuj"
-```
-
-## Personal module
-
-I added a class named `sergiobuj` and files defined for installing `dotfiles`,
-`applications` and `preferences`.
-I also have a file for `all`. This would allow us to make sure that everything
-gets installed in boxen when we `include sergiobuj::all` only modifying the
-module version in the `Puppetfile`.
-
-```
-class sergiobuj
-class sergiobuj::all
-class sergiobuj::applications
-class sergiobuj::dotfiles
-class sergiobuj::preferences
-
+github "buritica", "1.0.0", :repo => "buritica/puppet-buritica"
 ```
 
 ## Tags
