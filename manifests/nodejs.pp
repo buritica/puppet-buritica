@@ -1,17 +1,12 @@
 class buritica::nodejs {
   notice('setting up buritica nodejs')
 
-  # remove nodenv because it sucks
-  file {"${boxen::config::home}/nodenv":
-    ensure => absent,
-    force => true
-  }
   # include some provided versions
-  # nodejs::version { 'v0.10.33': }
-  # nodejs::version { 'v0.10.29': }
+  nodejs::version { 'v0.10.34': }
+  nodejs::version { 'v0.12.1': }
 
   # set the global nodejs version
-  # class { 'nodejs::global': version => 'v0.10.33' }
+  class { 'nodejs::global': version => 'v0.10.34' }
 
   # install some npm modules
   # nodejs::module { 'bower':
