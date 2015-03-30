@@ -18,7 +18,7 @@ class buritica::brew {
       'ghi',
       'postgresql',
       'aircrack-ng',
-      'xquartz',
+      'XQuartz',
       'speedtest_cli',
       'webkit2png',
       'coreutils',
