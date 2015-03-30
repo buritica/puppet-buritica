@@ -10,7 +10,6 @@ class buritica::apps {
   package {'imageoptim': provider => 'brewcask', install_options => "--appdir=/Applications"}
   package {'iterm2': provider => 'brewcask', install_options => "--appdir=/Applications"}
   package {'vlc': provider => 'brewcask', install_options => "--appdir=/Applications"}
-  package {'vmware-fusion': provider => 'brewcask', install_options => "--appdir=/Applications"}
 
   # package {'totalfinder': provider => 'brewcask', install_options => "--appdir=/Applications"}
 
