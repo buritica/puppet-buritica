@@ -12,15 +12,15 @@ class buritica::first {
   # package {'dropbox': provider => 'brewcask'}
 
   # open dropbox to be configured if it hasn't been installed
-  exec {"dropbox_installed":
-    command => 'true',
-    unless => 'test -e ~/.dropbox',
-  }
+  # exec {"dropbox_installed":
+  #   command => 'true',
+  #   unless => 'test -e ~/.dropbox',
+  # }
 
-  # check if dropbox was installed
-  exec {"dropbox_open":
-    command => "open /Applications/Dropbox.app",
-    require => Exec["dropbox_installed"],
-  }
+  # # check if dropbox was installed
+  # exec {"dropbox_open":
+  #   command => "open /Applications/Dropbox.app",
+  #   require => Exec["dropbox_installed"],
+  # }
 
 }
