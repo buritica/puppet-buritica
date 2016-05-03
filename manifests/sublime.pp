@@ -13,10 +13,10 @@ class buritica::sublime {
   # install inconsolata font
   package {'font-inconsolata': provider => 'brewcask'}
 
-  # sync sublime text user from dropbox
-  file { '/Users/buritica/Library/Application Support/Sublime Text 3/Packages/User':
-    ensure  => 'link',
-    target  => '/Users/buritica/Dropbox (Personal)/Sync/ST/User/'
-  }
+  # # sync sublime text user from dropbox
+  # file { '/Users/buritica/Library/Application Support/Sublime Text 3/Packages/User':
+  #   ensure  => 'link',
+  #   target  => '/Users/buritica/Dropbox (Personal)/Sync/ST/User/'
+  # }
 
 }
