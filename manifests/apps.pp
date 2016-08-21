@@ -13,8 +13,8 @@ class buritica::apps {
 
   # package {'totalfinder': provider => 'brewcask', install_options => "--appdir=/Applications"}
 
-  exec {'brew cask alfred link':
-    require => Package['alfred']
-  }
+  # exec {'brew cask alfred link':
+  #   require => Package['alfred']
+  # }
 
 }
