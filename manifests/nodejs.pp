@@ -2,11 +2,11 @@ class buritica::nodejs {
   notice('setting up buritica nodejs')
 
   # include some provided versions
-  nodejs::version { 'v0.10.34': }
-  nodejs::version { 'v0.12.1': }
+  # nodejs::version { 'v0.8.26': }
+  # nodejs::version { 'v4.2.4': }
 
   # set the global nodejs version
-  class { 'nodejs::global': version => 'v0.10.34' }
+  # class { 'nodejs::global': version => 'v4.2.4' }
 
   # install some npm modules
   # nodejs::module { 'bower':
