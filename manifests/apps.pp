@@ -1,20 +1,35 @@
 class buritica::apps {
-  notice('setting up first time installation')
-  include chrome::canary
+  notice('setting up apps')
+  # install brew cask
+  include brewcask
 
-  package {'cloudup': provider => 'brewcask', install_options => "--appdir=/Applications"}
-  package {'alfred': provider => 'brewcask', install_options => "--appdir=/Applications"}
-  package {'minecraft': provider => 'brewcask', install_options => "--appdir=/Applications"}
-  package {'spotify': provider => 'brewcask', install_options => "--appdir=/Applications"}
-  package {'limechat': provider => 'brewcask', install_options => "--appdir=/Applications"}
-  package {'imageoptim': provider => 'brewcask', install_options => "--appdir=/Applications"}
-  package {'iterm2': provider => 'brewcask', install_options => "--appdir=/Applications"}
-  package {'vlc': provider => 'brewcask', install_options => "--appdir=/Applications"}
+  # enable additional cask repos
+  exec{'brew tap caskroom/versions':}
+  exec{'brew tap caskroom/fonts':}
 
-  # package {'totalfinder': provider => 'brewcask', install_options => "--appdir=/Applications"}
-
-  # exec {'brew cask alfred link':
-  #   require => Package['alfred']
-  # }
+  package {[
+    'alfred',
+    'bartender',
+    'dropbox',
+    'fantastical',
+    'font-inconsolata',
+    'google-chrome',
+    'iterm2',
+    'lingo',
+    'metabase',
+    'nimbus',
+    'private-internet-access',
+    'reflector',
+    'screenhero',
+    'skype',
+    'sonos',
+    'spotify',
+    'sublime-text2',
+    'whatsapp',
+    'zeplin',
+   ]:
+    provider => 'brewcask',
+    install_options => "--appdir=/Applications"
+  }
 
 }

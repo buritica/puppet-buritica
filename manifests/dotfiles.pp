@@ -15,7 +15,7 @@ class buritica::dotfiles {
                   --exclude ".exports" \
                   --exclude ".functions" \
                   --exclude ".osx" \
-                  -avh --no-perms . ~/test;'
+                  -avh --no-perms . ~;'
 
   notice('bring on the dotfiles')
 
