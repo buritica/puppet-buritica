@@ -14,6 +14,7 @@ class buritica::dotfiles {
                   --exclude ".aliases" \
                   --exclude ".exports" \
                   --exclude ".functions" \
+                  --exclude "buritica.itermcolors" \
                   --exclude ".osx" \
                   -avh --no-perms . ~;'
 

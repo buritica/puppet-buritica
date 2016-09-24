@@ -21,6 +21,7 @@ class buritica::apps {
     'private-internet-access',
     'reflector',
     'screenhero',
+    'sketch',
     'skype',
     'sonos',
     'spotify',

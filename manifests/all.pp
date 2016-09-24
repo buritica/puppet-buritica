@@ -11,6 +11,7 @@ class buritica::all {
       notice('im crowntail')
       include buritica::apps
       include buritica::homedropbox
+      include mongodb
     }
   }
 }
