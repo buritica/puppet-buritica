@@ -14,7 +14,7 @@ class buritica::homedropbox {
   file { '/Users/buritica/Downloads':
     ensure  => symlink,
     force   => true,
-    target  => '/Users/buritica/Dropbox/Downloads',
+    target  => '/Users/buritica/Dropbox/Desktop',
     ignore  => ['.DS_Store'],
     backup  => false
   }

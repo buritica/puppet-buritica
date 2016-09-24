@@ -18,7 +18,6 @@ class buritica::apps {
     'lingo',
     'metabase',
     'nimbus',
-    'private-internet-access',
     'reflector',
     'screenhero',
     'sketch',
