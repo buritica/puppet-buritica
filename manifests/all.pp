@@ -4,6 +4,7 @@ class buritica::all {
   include buritica::env
   include buritica::dotfiles
   include buritica::nodejs
+  include buritica::basics
 
   case $::hostname {
     # personal computer
