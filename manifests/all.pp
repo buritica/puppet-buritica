@@ -14,5 +14,10 @@ class buritica::all {
       include buritica::homedropbox
       include mongodb
     }
+    # public media server
+    'rosetail': {
+      notice('im rosetail')
+      include buritica::tv
+    }
   }
 }
