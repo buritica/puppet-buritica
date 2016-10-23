@@ -23,4 +23,13 @@ class buritica::apps {
     install_options => "--appdir=/Applications"
   }
 
+  # Homebrew Packages
+  package {
+    [
+      'heroku',
+    ]:
+    ensure => installed
+  }
+
+
 }
