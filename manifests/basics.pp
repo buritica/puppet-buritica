@@ -22,7 +22,7 @@ class buritica::basics {
     'alfred',
     'atom',
     'iterm2',
-    'sublime-text2',
+    'sublime-text',
    ]:
     provider => 'brewcask',
     install_options => "--appdir=/Applications"
